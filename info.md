@@ -7,7 +7,7 @@
 Fully built for Nvidia Shield.
 Change each entity/entity_id to your own media_player.shield
 ```yaml
-type: custom:shieldtv-card
+type: custom:shield-card
 entity: media_player.living_room_nvidia_shield
 name: false
 tv: true
