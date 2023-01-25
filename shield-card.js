@@ -29,6 +29,7 @@ mdiMenu,
 mdiRemote,
 mdiHulu,
 mdiPlex,
+mdiSpotify,
 } from "https://unpkg.com/@mdi/js@6.4.95/mdi.js?module"
 
 // Taken from mdi v5.9.55
@@ -251,7 +252,7 @@ class TVCardServices extends LitElement {
           ${
             this._config.youtube ||
             this._config.hulu ||
-            this._config.prime_video
+            this._config.spotify
               ? html`
                   <div class="row">
                     ${this._config.youtube ?
@@ -276,14 +277,14 @@ class TVCardServices extends LitElement {
                         ></ha-icon-button>
                       `
                     : emptyButton}
-                    ${this._config.prime_video ?
+                    ${this._config.spotify ?
                       html`
                         <ha-icon-button
-                          .action="${"prime_video"}"
+                          .action="${"spotify"}"
                           @click="${this.handleActionClick}"
-                          icon="mdi:amazon"
-                          .path=${AMAZON_ICON_PATH}
-                          title="Prime Video"
+                          icon="mdi:spotify"
+                          .path=${mdiSpotify}
+                          title="Spotify"
                         ></ha-icon-button>
                       `
                     : emptyButton}
@@ -439,7 +440,7 @@ class TVCardServices extends LitElement {
       "play",
       "forward",
       "netflix",
-      "prime_video",
+      "spotify",
       "youtube",
       "menu",
       "finder",
